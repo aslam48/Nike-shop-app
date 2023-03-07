@@ -1,34 +1,45 @@
-import { StyleSheet, Text, View, FlatList} from 'react-native'
+import { StyleSheet, Text, View, FlatList, Pressable} from 'react-native'
 import React from 'react'
 import cart from '../data/cart'
-import CartListItem from '../component/CartListItem'
+// import CartListItem from '../component/CartListItem'
+
+
+const ShoppingCartTotals = () => (
+  <View style={styles.totalsContainer}>
+    <view style={styles.row}>
+      <Text style={styles.text}>Subtotal</Text>
+      <Text style={styles.text}>410,00 US$</Text>
+    </view>
+
+    <view style={styles.row}>
+      <Text style={styles.text}>Delivery</Text>
+      <Text style={styles.text}>410,00 US$</Text>
+    </view>
+
+    <view style={styles.row}>
+      <Text style={styles.textBold}>Total</Text>
+      <Text style={styles.textBold}>410,00 US$</Text>
+    </view>
+  </View>
+)
+
 
 const ShoppingCart = () => {
   return (
-    <View>
-    <FlatList
+    <>
+    {/* <FlatList
       data={cart}
       renderItem={({ item }) => <CartListItem cartItem={item} />}
-      ListFooterComponent={() => (
-        <View style={styles.totalsContainer}>
-          <view style={styles.row}>
-            <Text style={styles.text}>Subtotal</Text>
-            <Text style={styles.text}>410,00 US$</Text>
-          </view>
+      ListFooterComponent={ShoppingCartTotals}
+    /> */}
 
-          <view style={styles.row}>
-            <Text style={styles.text}>Delivery</Text>
-            <Text style={styles.text}>410,00 US$</Text>
-          </view>
 
-          <view style={styles.row}>
-            <Text style={styles.textBold}>Total</Text>
-            <Text style={styles.textBold}>410,00 US$</Text>
-          </view>
-        </View>
-      )}
-    />
-    </View>
+
+      <Pressable  style={styles.button}>
+        <Text style={styles.buttonText}>Check out</Text>
+      </Pressable>
+
+    </>
   )
 }
 
@@ -56,6 +67,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "gray",
     fontFamily: "500"
-  }
+  },
+  button: {
+    position: "absolute",
+    bottom: 30,
+    width: "90%",
+    alignSelf: "center",
+    backgroundColor: "black",
+    padding: 20,
+    borderRadius: 100,
+    alignItems: "center"
+},
+
+buttonText: {
+    color: "white",
+    fontSize:"500",
+    fontSize: 16,
+}
 })
 
