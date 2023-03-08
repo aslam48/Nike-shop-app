@@ -1,15 +1,17 @@
 import { StyleSheet, Text, View, FlatList ,Image, Pressable } from 'react-native'
+import {useNavigation} from '@react-navigation/native'
 import React from 'react'
 import products from "../data/products";
 
 
 const ProductsScreens = () => {
+  const navigation = useNavigation()
   return (
     <FlatList
         data={products}
         renderItem={({ item }) => (
           <Pressable 
-          onPress={() => console.log("pressed:" + item.name)} style={styles.itemContainer}>
+          onPress={() => navigation.navigate('Product Details')} style={styles.itemContainer}>
           <Image source={{ uri: item.image }} style={styles.image} />
           </Pressable>
         )}

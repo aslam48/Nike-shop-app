@@ -14,7 +14,9 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Products" component={ProductsScreens} />
-        <Stack.Screen name="Product Details" component={ProductDetailsScreen} />
+        <Stack.Screen name="Product Details" component={ProductDetailsScreen}
+        options={{presentation: "modal"}}
+         />
         <Stack.Screen name="Cart" component={ShoppingCart} />
       </Stack.Navigator>
     </NavigationContainer>
