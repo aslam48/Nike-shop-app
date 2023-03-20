@@ -1,25 +1,3 @@
-// import {createSlice} from '@reduxjs/toolkit'
-
-// const initialState = {
-//    items: [],
-//    deliveryFee: 15,
-//    freeDeliveryFrom: 200,
-// }
-
-// export const cartSlice = createSlice({
-//    name: "cart",
-//    initialState,
-//    reducers: {
-//     addCartItem: (state, action) => {
-//         const newProduct = action.payload.product;
-//         state.items.push({product: newProduct, quantity: 1})
-//     },
-//     changeQuantity: (state, action) => {
-
-//     }    
-//    }
-// })
-
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -35,7 +13,13 @@ export const cartSlice = createSlice({
   reducers: {
     addCartItem: (state, action) => {
         const newProduct = action.payload.product;
-        state.items.push({product: newProduct, quantity: 1})
+        const product = state.items.find((item) => item.product.id === newProduct.id)
+        if(product){
+            cartItem.quantity += 1;
+        }else {
+            state.items.push({product: newProduct, quantity: 1})
+        }
+
     },
     changeQuantity: (state, action) => {
     },
