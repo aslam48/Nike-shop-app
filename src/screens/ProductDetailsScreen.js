@@ -1,4 +1,3 @@
-import { createSlice } from "@reduxjs/toolkit";
 import {
   StyleSheet,
   Text,
@@ -10,6 +9,8 @@ import {
   Pressable,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import { cartSlice } from '../store/cartSlice'
+
 
 const ProductDetailsScreen = () => {
   const product = useSelector((state) => state.products.selectedProduct);
@@ -18,7 +19,7 @@ const dispatch = useDispatch()
   const { width } = useWindowDimensions();
 
   const addToCart = () => {
-    dispatch(createSlice.actions.addCartItem({product}))
+    dispatch(cartSlice.actions.addCartItem({product})) 
   };
 
 

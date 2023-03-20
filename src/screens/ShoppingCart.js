@@ -6,20 +6,20 @@ import CartListItem from '../component/CartListItem'
 
 const ShoppingCartTotals = () => (
   <View style={styles.totalsContainer}>
-    <view style={styles.row}>
+    <View style={styles.row}>
       <Text style={styles.text}>Subtotal</Text>
       <Text style={styles.text}>410,00 US$</Text>
-    </view>
+    </View>
 
-    <view style={styles.row}>
+    <View style={styles.row}>
       <Text style={styles.text}>Delivery</Text>
       <Text style={styles.text}>410,00 US$</Text>
-    </view>
+    </View>
 
-    <view style={styles.row}>
+    <View style={styles.row}>
       <Text style={styles.textBold}>Total</Text>
       <Text style={styles.textBold}>410,00 US$</Text>
-    </view>
+    </View>
   </View>
 )
 
