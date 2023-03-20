@@ -66,8 +66,7 @@ const styles = StyleSheet.create({
   },
   textBold: {
     fontSize: 16,
-    color: "gray",
-    fontFamily: "500"
+    fontWeight: "500"
   },
   button: {
     position: "absolute",
