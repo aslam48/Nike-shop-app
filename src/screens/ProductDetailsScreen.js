@@ -1,3 +1,4 @@
+import { createSlice } from "@reduxjs/toolkit";
 import {
   StyleSheet,
   Text,
@@ -8,16 +9,19 @@ import {
   ScrollView,
   Pressable,
 } from "react-native";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const ProductDetailsScreen = () => {
   const product = useSelector((state) => state.products.selectedProduct);
+const dispatch = useDispatch()
 
   const { width } = useWindowDimensions();
 
   const addToCart = () => {
-    console.log("aslam");
+    dispatch(createSlice.actions.addCartItem({product}))
   };
+
+
   return (
     <View>
       <ScrollView>
