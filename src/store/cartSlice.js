@@ -1,5 +1,5 @@
 
-import { createSlice } from '@reduxjs/toolkit';
+}import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
@@ -19,8 +19,8 @@ export const cartSlice = createSlice({
         }else {
             state.items.push({product: newProduct, quantity: 1})
         }
-
     },
+
     changeQuantity: (state, action) => {
     },
   },
